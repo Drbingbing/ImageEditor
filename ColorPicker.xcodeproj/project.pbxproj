@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4448ED122DF8307C00934528 /* PureLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 4448ED112DF8307C00934528 /* PureLayout */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		4448ECE62DF82A9800934528 /* ColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -14,7 +18,7 @@
 		4448ECF82DF82A9900934528 /* Exceptions for "ColorPicker" folder in "ColorPicker" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Applications/Info.plist,
 			);
 			target = 4448ECE52DF82A9800934528 /* ColorPicker */;
 		};
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4448ED122DF8307C00934528 /* PureLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = ColorPicker;
 			packageProductDependencies = (
+				4448ED112DF8307C00934528 /* PureLayout */,
 			);
 			productName = ColorPicker;
 			productReference = 4448ECE62DF82A9800934528 /* ColorPicker.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 4448ECDD2DF82A9800934528;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4448ED102DF8307C00934528 /* XCRemoteSwiftPackageReference "PureLayout" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4448ECE72DF82A9800934528 /* Products */;
 			projectDirPath = "";
@@ -146,7 +155,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ColorPicker/Info.plist;
+				INFOPLIST_FILE = ColorPicker/Applications/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -173,7 +182,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ColorPicker/Info.plist;
+				INFOPLIST_FILE = ColorPicker/Applications/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -333,6 +342,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4448ED102DF8307C00934528 /* XCRemoteSwiftPackageReference "PureLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PureLayout/PureLayout.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4448ED112DF8307C00934528 /* PureLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4448ED102DF8307C00934528 /* XCRemoteSwiftPackageReference "PureLayout" */;
+			productName = PureLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4448ECDE2DF82A9800934528 /* Project object */;
 }
