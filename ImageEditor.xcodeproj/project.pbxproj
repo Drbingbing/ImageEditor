@@ -30,6 +30,10 @@
 		4448ED5E2DF95C0D00934528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4448ED2B2DF95C0D00934528 /* Assets.xcassets */; };
 		4448ED5F2DF95C0D00934528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4448ED2E2DF95C0D00934528 /* LaunchScreen.storyboard */; };
 		4448ED602DF95C0D00934528 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4448ED302DF95C0D00934528 /* Main.storyboard */; };
+		4448ED6A2DFA724000934528 /* ImageEditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED692DFA723800934528 /* ImageEditorToolbar.swift */; };
+		4448ED6C2DFA772800934528 /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED6B2DFA772500934528 /* UIDevice+.swift */; };
+		4448ED6E2DFA78AC00934528 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED6D2DFA78A700934528 /* UIStackView+.swift */; };
+		4448ED732DFAA05600934528 /* Symbols.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4448ED722DFAA05600934528 /* Symbols.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +61,10 @@
 		4448ED452DF95C0D00934528 /* PermissiveGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissiveGestureRecognizer.swift; sourceTree = "<group>"; };
 		4448ED462DF95C0D00934528 /* ImageEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
 		4448ED472DF95C0D00934528 /* ViewController+Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Draw.swift"; sourceTree = "<group>"; };
+		4448ED692DFA723800934528 /* ImageEditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorToolbar.swift; sourceTree = "<group>"; };
+		4448ED6B2DFA772500934528 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
+		4448ED6D2DFA78A700934528 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		4448ED722DFAA05600934528 /* Symbols.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Symbols.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,7 @@
 				4448ED2E2DF95C0D00934528 /* LaunchScreen.storyboard */,
 				4448ED302DF95C0D00934528 /* Main.storyboard */,
 				4448ED312DF95C0D00934528 /* SceneDelegate.swift */,
+				4448ED722DFAA05600934528 /* Symbols.xcassets */,
 			);
 			path = Applications;
 			sourceTree = "<group>";
@@ -111,6 +120,8 @@
 		4448ED3D2DF95C0D00934528 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4448ED6D2DFA78A700934528 /* UIStackView+.swift */,
+				4448ED6B2DFA772500934528 /* UIDevice+.swift */,
 				4448ED352DF95C0D00934528 /* AutoLayout+.swift */,
 				4448ED362DF95C0D00934528 /* CGFloat+.swift */,
 				4448ED372DF95C0D00934528 /* CGPoint+.swift */,
@@ -145,6 +156,7 @@
 		4448ED482DF95C0D00934528 /* ImageEditor */ = {
 			isa = PBXGroup;
 			children = (
+				4448ED692DFA723800934528 /* ImageEditorToolbar.swift */,
 				4448ED452DF95C0D00934528 /* PermissiveGestureRecognizer.swift */,
 				4448ED462DF95C0D00934528 /* ImageEditorViewController.swift */,
 				4448ED472DF95C0D00934528 /* ViewController+Draw.swift */,
@@ -239,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4448ED5E2DF95C0D00934528 /* Assets.xcassets in Resources */,
+				4448ED732DFAA05600934528 /* Symbols.xcassets in Resources */,
 				4448ED5F2DF95C0D00934528 /* LaunchScreen.storyboard in Resources */,
 				4448ED602DF95C0D00934528 /* Main.storyboard in Resources */,
 			);
@@ -251,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4448ED6A2DFA724000934528 /* ImageEditorToolbar.swift in Sources */,
 				4448ED4B2DF95C0D00934528 /* CircleView.swift in Sources */,
 				4448ED4C2DF95C0D00934528 /* CGRect+.swift in Sources */,
 				4448ED4D2DF95C0D00934528 /* AppDelegate.swift in Sources */,
@@ -269,6 +283,8 @@
 				4448ED5A2DF95C0D00934528 /* UIEdgeInsets+.swift in Sources */,
 				4448ED5B2DF95C0D00934528 /* DynamicLayoutView.swift in Sources */,
 				4448ED5C2DF95C0D00934528 /* ImageEditorViewController.swift in Sources */,
+				4448ED6E2DFA78AC00934528 /* UIStackView+.swift in Sources */,
+				4448ED6C2DFA772800934528 /* UIDevice+.swift in Sources */,
 				4448ED5D2DF95C0D00934528 /* CGPoint+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

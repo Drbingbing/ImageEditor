@@ -28,7 +28,7 @@ extension ImageEditorViewController {
         view.addSubview(drawToolbar)
         
         drawToolbar.autoPinWidthToSuperview()
-        drawToolbar.autoPinEdge(toSuperviewMargin: .bottom)
+        drawToolbar.autoPinEdge(.bottom, to: .top, of: bottomBar)
         
         drawToolUIInitialized = true
     }

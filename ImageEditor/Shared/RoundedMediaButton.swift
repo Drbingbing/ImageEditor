@@ -28,7 +28,7 @@ final class RoundedMediaButton: UIButton {
     static let defaultBackgroundColor = UIColor(rgbHex: 0x2E2E2E)
     static let visibleButtonSize: CGFloat = 42
     
-    private static let defaultInset: CGFloat = 8
+    private static let defaultInset: CGFloat = UIDevice.current.isNarrowerThanIPhone6 ? 4 : 8
     private static let defaultContentInset: CGFloat = 15
     
     convenience init(image: UIImage?, backgroundStyle: BackgroundStyle) {
@@ -57,19 +57,19 @@ final class RoundedMediaButton: UIButton {
         setCompressionResistanceHigh()
         
         if backgroundView != nil || customView != nil {
-            let backgroundContainerView = UIView()
+            let backgroundContainerView = PillView()
             backgroundContainerView.isUserInteractionEnabled = false
             addSubview(backgroundContainerView)
             backgroundContainerView.autoPinEdgesToSuperviewMargins()
             self.backgroundContainerView = backgroundContainerView
             
-            if let backgroundView {
+            if let backgroundView = backgroundView {
                 backgroundView.isUserInteractionEnabled = false
                 backgroundContainerView.addSubview(backgroundView)
                 backgroundView.autoPinEdgesToSuperviewMargins()
             }
             
-            if let customView {
+            if let customView = customView {
                 backgroundContainerView.addSubview(customView)
                 customView.autoCenterInSuperview()
             }
@@ -106,7 +106,7 @@ final class RoundedMediaButton: UIButton {
         }
     }
     
-    private var backgroundColors: [ UIControl.State.RawValue: UIColor ] = [:]
+    private var backgroundColors: [UIControl.State.RawValue: UIColor] = [:]
     
     func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
         if let color = color {
