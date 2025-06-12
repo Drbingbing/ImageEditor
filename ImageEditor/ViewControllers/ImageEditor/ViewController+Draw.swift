@@ -6,10 +6,46 @@
 //
 
 import UIKit
+import PureLayout
 
-extension ViewController {
+private let drawToolUIInitializedKey = malloc(4)
+
+extension ImageEditorViewController {
     
-    class DrawToolBar: UIView {
+    private var drawToolUIInitialized: Bool {
+        get {
+            let result = objc_getAssociatedObject(self, drawToolUIInitializedKey!)
+            return result as? Bool ?? false
+        }
+        set {
+            objc_setAssociatedObject(self, drawToolUIInitializedKey!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    private func initializeDrawToolUIIfNecessary() {
+        guard !drawToolUIInitialized else { return }
+        
+        view.addSubview(drawToolbar)
+        
+        drawToolbar.autoPinWidthToSuperview()
+        drawToolbar.autoPinEdge(toSuperviewMargin: .bottom)
+        
+        drawToolUIInitialized = true
+    }
+    
+    func updateDrawToolUIVisibility() {
+        let visible = mode == .draw
+        
+        if visible {
+            initializeDrawToolUIIfNecessary()
+        } else {
+            guard drawToolUIInitialized else { return }
+        }
+        
+        drawToolbar.isHidden = !visible
+    }
+    
+    class DrawToolbar: UIView {
         
         let colorPickerView: ColorPickerBarView
         
@@ -36,7 +72,7 @@ extension ViewController {
                 stackviewLayoutGuide.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor)
             ])
             addConstraint({
-                let constraint = stackviewLayoutGuide.widthAnchor.constraint(equalToConstant: ViewController.preferredToolbarContentWidth)
+                let constraint = stackviewLayoutGuide.widthAnchor.constraint(equalToConstant: ImageEditorViewController.preferredToolbarContentWidth)
                 constraint.priority = .defaultHigh
                 return constraint
             }())

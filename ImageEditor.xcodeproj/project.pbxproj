@@ -25,7 +25,7 @@
 		4448ED592DF95C0D00934528 /* CGSize+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED392DF95C0D00934528 /* CGSize+.swift */; };
 		4448ED5A2DF95C0D00934528 /* UIEdgeInsets+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED3B2DF95C0D00934528 /* UIEdgeInsets+.swift */; };
 		4448ED5B2DF95C0D00934528 /* DynamicLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED3F2DF95C0D00934528 /* DynamicLayoutView.swift */; };
-		4448ED5C2DF95C0D00934528 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED462DF95C0D00934528 /* ViewController.swift */; };
+		4448ED5C2DF95C0D00934528 /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED462DF95C0D00934528 /* ImageEditorViewController.swift */; };
 		4448ED5D2DF95C0D00934528 /* CGPoint+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED372DF95C0D00934528 /* CGPoint+.swift */; };
 		4448ED5E2DF95C0D00934528 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4448ED2B2DF95C0D00934528 /* Assets.xcassets */; };
 		4448ED5F2DF95C0D00934528 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4448ED2E2DF95C0D00934528 /* LaunchScreen.storyboard */; };
@@ -55,7 +55,7 @@
 		4448ED412DF95C0D00934528 /* RoundedMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedMediaButton.swift; sourceTree = "<group>"; };
 		4448ED432DF95C0D00934528 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		4448ED452DF95C0D00934528 /* PermissiveGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissiveGestureRecognizer.swift; sourceTree = "<group>"; };
-		4448ED462DF95C0D00934528 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4448ED462DF95C0D00934528 /* ImageEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
 		4448ED472DF95C0D00934528 /* ViewController+Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Draw.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				4448ED452DF95C0D00934528 /* PermissiveGestureRecognizer.swift */,
-				4448ED462DF95C0D00934528 /* ViewController.swift */,
+				4448ED462DF95C0D00934528 /* ImageEditorViewController.swift */,
 				4448ED472DF95C0D00934528 /* ViewController+Draw.swift */,
 			);
 			path = ImageEditor;
@@ -268,7 +268,7 @@
 				4448ED592DF95C0D00934528 /* CGSize+.swift in Sources */,
 				4448ED5A2DF95C0D00934528 /* UIEdgeInsets+.swift in Sources */,
 				4448ED5B2DF95C0D00934528 /* DynamicLayoutView.swift in Sources */,
-				4448ED5C2DF95C0D00934528 /* ViewController.swift in Sources */,
+				4448ED5C2DF95C0D00934528 /* ImageEditorViewController.swift in Sources */,
 				4448ED5D2DF95C0D00934528 /* CGPoint+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

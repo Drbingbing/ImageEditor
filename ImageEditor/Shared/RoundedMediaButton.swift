@@ -51,7 +51,7 @@ final class RoundedMediaButton: UIButton {
         super.init(frame: CGRect(origin: .zero, size: .square(Self.visibleButtonSize + 2*Self.defaultInset)))
         
         layoutMargins = UIEdgeInsets(margin: Self.defaultInset)
-        tintColor = .systemBlue
+        tintColor = UIColor(rgbHex: 0xFFFFFF)
         insetsLayoutMarginsFromSafeArea = false
         
         setCompressionResistanceHigh()
