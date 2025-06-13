@@ -26,8 +26,7 @@ class ImageEditorViewController: UIViewController {
     }
     
     lazy var imageEditorView = {
-        let editorView = UIView()
-        editorView.backgroundColor = .clear
+        let editorView = ImageEditorView()
         return editorView
     }()
     
@@ -40,6 +39,64 @@ class ImageEditorViewController: UIViewController {
         return toolbar
     }()
     
+    lazy var blurToolbar = {
+        let drawAnyWhereHint = UILabel()
+        drawAnyWhereHint.font = .dynamicTypeCaption1
+        drawAnyWhereHint.textColor = .white
+        drawAnyWhereHint.textAlignment = .center
+        drawAnyWhereHint.numberOfLines = 0
+        drawAnyWhereHint.lineBreakMode = .byWordWrapping
+        drawAnyWhereHint.text = "繪製任何地方使之模糊"
+        drawAnyWhereHint.layer.shadowColor = UIColor.black.cgColor
+        drawAnyWhereHint.layer.shadowRadius = 2
+        drawAnyWhereHint.layer.shadowOpacity = 0.66
+        drawAnyWhereHint.layer.shadowOffset = .zero
+        
+        let stackView = UIStackView(arrangedSubviews: [faceBlurContainer, drawAnyWhereHint])
+        stackView.alignment = .center
+        stackView.axis = .vertical
+        stackView.spacing = 14
+        
+        return stackView
+    }()
+    
+    lazy var faceBlurContainer = {
+        let containerView = PillView()
+        containerView.layoutMargins = UIEdgeInsets(top: 6, left: 16, bottom: 6, right: 8)
+        
+        let blurBackgroundView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        containerView.addSubview(blurBackgroundView)
+        blurBackgroundView.autoPinEdgesToSuperviewEdges()
+        
+        let autoBlurLabel = UILabel()
+        autoBlurLabel.text = "模糊臉部"
+        autoBlurLabel.textColor = .white
+        autoBlurLabel.font = .dynamicTypeSubheadlineClamped
+        
+        let stackView = UIStackView(arrangedSubviews: [autoBlurLabel, faceBlurSwitch])
+        stackView.spacing = 12
+        stackView.alignment = .center
+        stackView.axis = .horizontal
+        containerView.addSubview(stackView)
+        stackView.autoPinEdgesToSuperviewMargins()
+        
+        return containerView
+    }()
+    
+    lazy var faceBlurSwitch = {
+        let faceBlurSwitch = UISwitch()
+        faceBlurSwitch.addTarget(self, action: #selector(didToggleAutoBlur), for: .valueChanged)
+        faceBlurSwitch.isOn = false
+        return faceBlurSwitch
+    }()
+    lazy var blurToolGestureRecognizer: ImageEditorPanGestureRecognizer = {
+        let gestureRecognizer = ImageEditorPanGestureRecognizer(target: self, action: #selector(handleBlurToolGesture))
+        gestureRecognizer.maximumNumberOfTouches = 1
+        gestureRecognizer.referenceView = imageEditorView.gestureReferenceView
+        gestureRecognizer.delegate = self
+        return gestureRecognizer
+    }()
+    
     static let preferredToolbarContentWidth: CGFloat = {
         let screenWidth = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
         let inset: CGFloat = 16
@@ -49,6 +106,7 @@ class ImageEditorViewController: UIViewController {
     override func viewDidLoad() {
         view.backgroundColor = .black
         
+        imageEditorView.configureSubviews()
         view.addSubview(imageEditorView)
         imageEditorView.autoPinWidthToSuperview()
         imageEditorView.autoPinEdge(toSuperviewSafeArea: .top)
@@ -67,6 +125,7 @@ class ImageEditorViewController: UIViewController {
     
     private func updateUIForCurrentMode() {
         updateDrawToolUIVisibility()
+        updateBlurToolUIVisibility()
         
         for button in bottomBar.buttons {
             button.isSelected = mode.rawValue == button.tag
@@ -153,5 +212,30 @@ extension ImageEditorViewController {
     @objc
     private func didTapDone(_ sender: UIButton) {
         
+    }
+    
+    @objc
+    private func didToggleAutoBlur(_ sender: UISwitch) {
+        
+    }
+}
+
+// MARK: - UIGestureRecognizerDelegate
+extension ImageEditorViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        switch mode {
+        case .draw:
+            guard !drawToolbar.bounds.contains(touch.location(in: drawToolbar)) else {
+                return false
+            }
+            
+            return true
+        case .blur:
+            return !blurToolbar.bounds.contains(touch.location(in: blurToolbar))
+            
+        default:
+            return true
+        }
     }
 }

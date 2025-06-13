@@ -19,7 +19,7 @@
 		4448ED532DF95C0D00934528 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED312DF95C0D00934528 /* SceneDelegate.swift */; };
 		4448ED542DF95C0D00934528 /* PillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED402DF95C0D00934528 /* PillView.swift */; };
 		4448ED552DF95C0D00934528 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED3A2DF95C0D00934528 /* UIColor+.swift */; };
-		4448ED562DF95C0D00934528 /* ViewController+Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED472DF95C0D00934528 /* ViewController+Draw.swift */; };
+		4448ED562DF95C0D00934528 /* ImageEditorViewController+Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED472DF95C0D00934528 /* ImageEditorViewController+Draw.swift */; };
 		4448ED572DF95C0D00934528 /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED362DF95C0D00934528 /* CGFloat+.swift */; };
 		4448ED582DF95C0D00934528 /* RoundedMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED412DF95C0D00934528 /* RoundedMediaButton.swift */; };
 		4448ED592DF95C0D00934528 /* CGSize+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED392DF95C0D00934528 /* CGSize+.swift */; };
@@ -41,6 +41,11 @@
 		44B4A5082DFBCE8900ADD2A0 /* DeprecationWorkaround.h in Headers */ = {isa = PBXBuildFile; fileRef = 44B4A5042DFBCE8900ADD2A0 /* DeprecationWorkaround.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44B4A5092DFBCE8900ADD2A0 /* UIButton+DeprecationWorkaround.h in Headers */ = {isa = PBXBuildFile; fileRef = 44B4A5052DFBCE8900ADD2A0 /* UIButton+DeprecationWorkaround.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44B4A50A2DFBCE8900ADD2A0 /* UIButton+DeprecationWorkaround.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5062DFBCE8900ADD2A0 /* UIButton+DeprecationWorkaround.m */; };
+		44B4A5282DFC10EA00ADD2A0 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5272DFC10E500ADD2A0 /* UIFont+.swift */; };
+		44B4A52A2DFC123A00ADD2A0 /* ImageEditorViewController+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5292DFC122E00ADD2A0 /* ImageEditorViewController+Blur.swift */; };
+		44B4A52C2DFC134900ADD2A0 /* ImageEditorPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A52B2DFC134800ADD2A0 /* ImageEditorPanGestureRecognizer.swift */; };
+		44B4A52E2DFC140D00ADD2A0 /* ImageEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A52D2DFC140700ADD2A0 /* ImageEditorView.swift */; };
+		44B4A5302DFC144000ADD2A0 /* ImageEditorCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A52F2DFC143900ADD2A0 /* ImageEditorCanvasView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +96,7 @@
 		4448ED432DF95C0D00934528 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		4448ED452DF95C0D00934528 /* PermissiveGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissiveGestureRecognizer.swift; sourceTree = "<group>"; };
 		4448ED462DF95C0D00934528 /* ImageEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
-		4448ED472DF95C0D00934528 /* ViewController+Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Draw.swift"; sourceTree = "<group>"; };
+		4448ED472DF95C0D00934528 /* ImageEditorViewController+Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageEditorViewController+Draw.swift"; sourceTree = "<group>"; };
 		4448ED692DFA723800934528 /* ImageEditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorToolbar.swift; sourceTree = "<group>"; };
 		4448ED6B2DFA772500934528 /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
 		4448ED6D2DFA78A700934528 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
@@ -102,6 +107,11 @@
 		44B4A5042DFBCE8900ADD2A0 /* DeprecationWorkaround.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeprecationWorkaround.h; sourceTree = "<group>"; };
 		44B4A5052DFBCE8900ADD2A0 /* UIButton+DeprecationWorkaround.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+DeprecationWorkaround.h"; sourceTree = "<group>"; };
 		44B4A5062DFBCE8900ADD2A0 /* UIButton+DeprecationWorkaround.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+DeprecationWorkaround.m"; sourceTree = "<group>"; };
+		44B4A5272DFC10E500ADD2A0 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		44B4A5292DFC122E00ADD2A0 /* ImageEditorViewController+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageEditorViewController+Blur.swift"; sourceTree = "<group>"; };
+		44B4A52B2DFC134800ADD2A0 /* ImageEditorPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		44B4A52D2DFC140700ADD2A0 /* ImageEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorView.swift; sourceTree = "<group>"; };
+		44B4A52F2DFC143900ADD2A0 /* ImageEditorCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorCanvasView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +177,7 @@
 		4448ED3D2DF95C0D00934528 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				44B4A5272DFC10E500ADD2A0 /* UIFont+.swift */,
 				4448ED762DFBC20D00934528 /* NSDirectionalEdgeInsets+.swift */,
 				4448ED742DFADB0300934528 /* WithoutDeprecationWarnings.swift */,
 				4448ED6D2DFA78A700934528 /* UIStackView+.swift */,
@@ -205,10 +216,14 @@
 		4448ED482DF95C0D00934528 /* ImageEditor */ = {
 			isa = PBXGroup;
 			children = (
+				44B4A52F2DFC143900ADD2A0 /* ImageEditorCanvasView.swift */,
+				44B4A52B2DFC134800ADD2A0 /* ImageEditorPanGestureRecognizer.swift */,
 				4448ED692DFA723800934528 /* ImageEditorToolbar.swift */,
-				4448ED452DF95C0D00934528 /* PermissiveGestureRecognizer.swift */,
+				44B4A52D2DFC140700ADD2A0 /* ImageEditorView.swift */,
 				4448ED462DF95C0D00934528 /* ImageEditorViewController.swift */,
-				4448ED472DF95C0D00934528 /* ViewController+Draw.swift */,
+				44B4A5292DFC122E00ADD2A0 /* ImageEditorViewController+Blur.swift */,
+				4448ED472DF95C0D00934528 /* ImageEditorViewController+Draw.swift */,
+				4448ED452DF95C0D00934528 /* PermissiveGestureRecognizer.swift */,
 			);
 			path = ImageEditor;
 			sourceTree = "<group>";
@@ -370,19 +385,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				4448ED6A2DFA724000934528 /* ImageEditorToolbar.swift in Sources */,
+				44B4A52E2DFC140D00ADD2A0 /* ImageEditorView.swift in Sources */,
 				4448ED4B2DF95C0D00934528 /* CircleView.swift in Sources */,
 				4448ED4C2DF95C0D00934528 /* CGRect+.swift in Sources */,
+				44B4A52C2DFC134900ADD2A0 /* ImageEditorPanGestureRecognizer.swift in Sources */,
 				4448ED752DFADB0C00934528 /* WithoutDeprecationWarnings.swift in Sources */,
+				44B4A52A2DFC123A00ADD2A0 /* ImageEditorViewController+Blur.swift in Sources */,
 				4448ED4D2DF95C0D00934528 /* AppDelegate.swift in Sources */,
 				4448ED4E2DF95C0D00934528 /* UIView+.swift in Sources */,
+				44B4A5302DFC144000ADD2A0 /* ImageEditorCanvasView.swift in Sources */,
 				4448ED4F2DF95C0D00934528 /* ColorPickerBar.swift in Sources */,
+				44B4A5282DFC10EA00ADD2A0 /* UIFont+.swift in Sources */,
 				4448ED502DF95C0D00934528 /* Math.swift in Sources */,
 				4448ED512DF95C0D00934528 /* AutoLayout+.swift in Sources */,
 				4448ED522DF95C0D00934528 /* PermissiveGestureRecognizer.swift in Sources */,
 				4448ED532DF95C0D00934528 /* SceneDelegate.swift in Sources */,
 				4448ED542DF95C0D00934528 /* PillView.swift in Sources */,
 				4448ED552DF95C0D00934528 /* UIColor+.swift in Sources */,
-				4448ED562DF95C0D00934528 /* ViewController+Draw.swift in Sources */,
+				4448ED562DF95C0D00934528 /* ImageEditorViewController+Draw.swift in Sources */,
 				4448ED772DFBC20E00934528 /* NSDirectionalEdgeInsets+.swift in Sources */,
 				4448ED572DF95C0D00934528 /* CGFloat+.swift in Sources */,
 				4448ED582DF95C0D00934528 /* RoundedMediaButton.swift in Sources */,
