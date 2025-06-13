@@ -9,12 +9,17 @@ import UIKit
 
 final class ImageEditorCanvasView: UIView {
     
+    let contentView = DynamicLayoutView()
+    
     // clipView is used to clip the content.  It reflects the actual
     // visible bounds of the "canvas" content.
     private let clipView = DynamicLayoutView()
     
     private var contentViewConstraints = [NSLayoutConstraint]()
 
+    private var imageLayer = CALayer()
+    
+    private static var srcImageSizePixels: CGSize = .zero
     
     func configureSubviews() {
         
@@ -28,6 +33,19 @@ final class ImageEditorCanvasView: UIView {
         }
         addSubview(clipView)
         
+        let srcImage = UIImage(imageLiteralResourceName: "money")
+        Self.srcImageSizePixels = srcImage.size
+        imageLayer.contents = srcImage.cgImage
+        imageLayer.contentsScale = srcImage.scale
+        
+        contentView.isOpaque = false
+        contentView.layer.addSublayer(imageLayer)
+        contentView.layoutCallback = { [weak self] _ in
+            self?.updateAllContent()
+        }
+        clipView.addSubview(contentView)
+        contentView.autoPinEdgesToSuperviewEdges()
+        
         updateLayout()
     }
     
@@ -39,6 +57,31 @@ final class ImageEditorCanvasView: UIView {
         NSLayoutConstraint.deactivate(contentViewConstraints)
         contentViewConstraints = Self.updateContentLayout(contentView: clipView)
     }
+
+    // MARK: - Content
+
+    private var contentLayerMap = [String: CALayer]()
+
+    private func updateAllContent() {
+        // Don't animate changes.
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+
+        for layer in contentLayerMap.values {
+            layer.removeFromSuperlayer()
+        }
+        contentLayerMap.removeAll()
+        
+        let viewSize = clipView.bounds.size
+        if viewSize.width > 0, viewSize.height > 0 {
+            
+        }
+    }
+    
+    private func updateImageLayer() {
+        let viewSize = clipView.bounds.size
+        Self.updateImageLayer(imageLayer: imageLayer, viewSize: viewSize, imageSize: Self.srcImageSizePixels)
+    }
     
     class func updateContentLayout(contentView: UIView) -> [NSLayoutConstraint] {
         guard let superview = contentView.superview else {
@@ -46,7 +89,7 @@ final class ImageEditorCanvasView: UIView {
             return []
         }
         
-        let aspectRatio: CGSize = CGSize(width: 300, height: 300)
+        let aspectRatio = srcImageSizePixels
         
         // This emulates the behavior of contentMode = .scaleAspectFit using iOS auto layout constraints.
         var constraints = [NSLayoutConstraint]()
@@ -71,5 +114,22 @@ final class ImageEditorCanvasView: UIView {
             constraints.append(contentsOf: contentView.autoSetDimensions(to: outputSizePoints))
         }
         return constraints
+    }
+    
+    class func updateImageLayer(imageLayer: CALayer, viewSize: CGSize, imageSize: CGSize) {
+        
+    }
+    
+    class func imageFrame(forViewSize viewSize: CGSize, imageSize: CGSize) -> CGRect {
+        guard viewSize.width > 0, viewSize.height > 0 else {
+            debugPrint("Invalid viewSize")
+            return .zero
+        }
+        guard imageSize.width > 0, imageSize.height > 0 else {
+            debugPrint("Invalid imageSize")
+            return .zero
+        }
+        
+        
     }
 }
