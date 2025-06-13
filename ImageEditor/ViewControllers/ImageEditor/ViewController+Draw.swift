@@ -42,7 +42,13 @@ extension ImageEditorViewController {
             guard drawToolUIInitialized else { return }
         }
         
-        drawToolbar.isHidden = !visible
+        drawToolbar.isHidden = false
+        
+        UIView.animate(withDuration: 0.15) {
+            self.drawToolbar.alpha = visible ? 1 : 0
+        } completion: { _ in
+            self.drawToolbar.isHidden = !visible
+        }
     }
     
     class DrawToolbar: UIView {

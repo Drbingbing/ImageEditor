@@ -14,6 +14,7 @@ final class PillView: UIView {
         super.init(frame: frame)
         
         layer.masksToBounds = true
+        
         autoPin(toAspectRatio: 1.0, relation: .greaterThanOrEqual)
         
         NSLayoutConstraint.autoSetPriority(.defaultLow) {
@@ -25,13 +26,13 @@ final class PillView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override public var frame: CGRect {
+    override var frame: CGRect {
         didSet {
             updateRadius()
         }
     }
 
-    override public var bounds: CGRect {
+    override var bounds: CGRect {
         didSet {
             updateRadius()
         }

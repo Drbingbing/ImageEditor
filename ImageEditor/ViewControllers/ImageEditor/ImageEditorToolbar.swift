@@ -21,7 +21,7 @@ final class ImageEditorBottombar: UIView {
     
     let doneButton: UIButton = RoundedMediaButton(
         image: UIImage(imageLiteralResourceName: "check-28"),
-        backgroundStyle: .solid(.blue)
+        backgroundStyle: .solid(RoundedMediaButton.defaultBackgroundColor)
     )
     
     let buttons: [UIButton]

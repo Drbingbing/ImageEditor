@@ -7,6 +7,7 @@
 
 import UIKit
 import PureLayout
+import DeprecationWorkaround
 
 final class RoundedMediaButton: UIButton {
     
@@ -29,7 +30,7 @@ final class RoundedMediaButton: UIButton {
     static let visibleButtonSize: CGFloat = 42
     
     private static let defaultInset: CGFloat = UIDevice.current.isNarrowerThanIPhone6 ? 4 : 8
-    private static let defaultContentInset: CGFloat = 15
+    private static let defaultContentInset: CGFloat = UIDevice.current.isNarrowerThanIPhone6 ? 11 : 15
     
     convenience init(image: UIImage?, backgroundStyle: BackgroundStyle) {
         self.init(image: image, backgroundStyle: backgroundStyle, customView: nil)
@@ -37,7 +38,7 @@ final class RoundedMediaButton: UIButton {
      
     init(image: UIImage?, backgroundStyle: BackgroundStyle, customView: UIView?) {
         self.backgroundStyle = backgroundStyle
-        self.backgroundView = {
+        backgroundView = {
             switch backgroundStyle {
             case .none:
                 return nil
@@ -50,6 +51,7 @@ final class RoundedMediaButton: UIButton {
         
         super.init(frame: CGRect(origin: .zero, size: .square(Self.visibleButtonSize + 2*Self.defaultInset)))
         
+        ie_contentEdgeInsets = UIEdgeInsets(margin: Self.defaultContentInset)
         layoutMargins = UIEdgeInsets(margin: Self.defaultInset)
         tintColor = UIColor(rgbHex: 0xFFFFFF)
         insetsLayoutMarginsFromSafeArea = false
@@ -66,7 +68,7 @@ final class RoundedMediaButton: UIButton {
             if let backgroundView = backgroundView {
                 backgroundView.isUserInteractionEnabled = false
                 backgroundContainerView.addSubview(backgroundView)
-                backgroundView.autoPinEdgesToSuperviewMargins()
+                backgroundView.autoPinEdgesToSuperviewEdges()
             }
             
             if let customView = customView {
