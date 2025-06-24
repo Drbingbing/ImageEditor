@@ -10,6 +10,8 @@ import PureLayout
 
 class ImageEditorViewController: UIViewController {
     
+    let model: ImageEditorModel = ImageEditorModel(image: UIImage(imageLiteralResourceName: "money"))
+    
     enum Mode: Int {
         case draw = 1
         case blur
@@ -25,8 +27,20 @@ class ImageEditorViewController: UIViewController {
         }
     }
     
+    var currentStrokeSamples = [ImageEditorStrokeItem.StrokeSample]()
+    var currentStrokeType: ImageEditorStrokeItem.StrokeType = .blur {
+        didSet {
+            
+        }
+    }
+    var currentStroke: ImageEditorStrokeItem? {
+        didSet {
+            
+        }
+    }
+    
     lazy var imageEditorView = {
-        let editorView = ImageEditorView()
+        let editorView = ImageEditorView(model: model)
         return editorView
     }()
     
@@ -130,6 +144,12 @@ class ImageEditorViewController: UIViewController {
         for button in bottomBar.buttons {
             button.isSelected = mode.rawValue == button.tag
         }
+    }
+    
+    func currentStrokeUnitWidth() -> CGFloat {
+        let unitStrokeWidth = ImageEditorStrokeItem.unitStrokeWidth(forStrokeType: currentStrokeType,
+                                                                    widthAdjustmentFactor: CGFloat(1))
+        return unitStrokeWidth / model.currentTransform().scaling
     }
 }
 

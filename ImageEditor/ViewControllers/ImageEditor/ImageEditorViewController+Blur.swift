@@ -51,6 +51,72 @@ extension ImageEditorViewController {
     }
     
     @objc func handleBlurToolGesture(_ gestureRecognizer: ImageEditorPanGestureRecognizer) {
+        func removeCurrentBlur() {
+            if let blur = currentStroke {
+                model.remove(item: blur)
+            }
+            currentStroke = nil
+            currentStrokeSamples.removeAll()
+        }
         
+        func tryToAppendBlurSample(_ locationInView: CGPoint) {
+            let view = imageEditorView.gestureReferenceView
+            let viewBounds = view.bounds
+            let newSample = ImageEditorCanvasView.locationImageUnit(forLocationInView: locationInView,
+                                                                    viewBounds: viewBounds,
+                                                                    model: model,
+                                                                    transform: model.currentTransform())
+            if let prevSample = currentStrokeSamples.last,
+               prevSample == newSample {
+                return
+            }
+            
+            currentStrokeSamples.append(newSample)
+        }
+        
+        let unitBlurStrokeWidth = currentStrokeUnitWidth()
+        
+        switch gestureRecognizer.state {
+        case .began:
+            removeCurrentBlur()
+            for location in gestureRecognizer.locationHistory {
+                tryToAppendBlurSample(location)
+            }
+
+            let locationInView = gestureRecognizer.location(in: imageEditorView.gestureReferenceView)
+            tryToAppendBlurSample(locationInView)
+            
+            let blur = ImageEditorStrokeItem(strokeType: .blur,
+                                             unitSamples: currentStrokeSamples,
+                                             unitStrokeWidth: unitBlurStrokeWidth)
+            
+            model.append(item: blur)
+            currentStroke = blur
+            
+        case .changed, .ended:
+            let locationInView = gestureRecognizer.location(in: imageEditorView.gestureReferenceView)
+            tryToAppendBlurSample(locationInView)
+            
+            guard let lastBlur = currentStroke else {
+                ieFailDebug("Missing last blur")
+                return
+            }
+            
+            let blurStorke = ImageEditorStrokeItem(itemId: lastBlur.itemId,
+                                                   strokeType: .blur,
+                                                   unitSamples: currentStrokeSamples,
+                                                   unitStrokeWidth: unitBlurStrokeWidth)
+            model.replace(item: blurStorke)
+            
+            if gestureRecognizer.state == .ended {
+                currentStroke = nil
+                currentStrokeSamples.removeAll()
+            } else {
+                currentStroke = blurStorke
+            }
+            
+        default:
+            removeCurrentBlur()
+        }
     }
 }

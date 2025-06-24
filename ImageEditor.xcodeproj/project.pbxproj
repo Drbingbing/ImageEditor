@@ -38,6 +38,8 @@
 		4448ED772DFBC20E00934528 /* NSDirectionalEdgeInsets+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448ED762DFBC20D00934528 /* NSDirectionalEdgeInsets+.swift */; };
 		4448EDAC2DFBCCDB00934528 /* DeprecationWorkaround.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4448EDA42DFBCCDB00934528 /* DeprecationWorkaround.framework */; };
 		4448EDAD2DFBCCDB00934528 /* DeprecationWorkaround.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4448EDA42DFBCCDB00934528 /* DeprecationWorkaround.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		445D0D002E0A3DFC00A83B46 /* IEAssertionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445D0CFF2E0A3DF200A83B46 /* IEAssertionError.swift */; };
+		445D0D022E0A3F4000A83B46 /* DispatchQueue+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445D0D012E0A3F3B00A83B46 /* DispatchQueue+.swift */; };
 		44B4A5082DFBCE8900ADD2A0 /* DeprecationWorkaround.h in Headers */ = {isa = PBXBuildFile; fileRef = 44B4A5042DFBCE8900ADD2A0 /* DeprecationWorkaround.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44B4A5092DFBCE8900ADD2A0 /* UIButton+DeprecationWorkaround.h in Headers */ = {isa = PBXBuildFile; fileRef = 44B4A5052DFBCE8900ADD2A0 /* UIButton+DeprecationWorkaround.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44B4A50A2DFBCE8900ADD2A0 /* UIButton+DeprecationWorkaround.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5062DFBCE8900ADD2A0 /* UIButton+DeprecationWorkaround.m */; };
@@ -46,6 +48,15 @@
 		44B4A52C2DFC134900ADD2A0 /* ImageEditorPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A52B2DFC134800ADD2A0 /* ImageEditorPanGestureRecognizer.swift */; };
 		44B4A52E2DFC140D00ADD2A0 /* ImageEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A52D2DFC140700ADD2A0 /* ImageEditorView.swift */; };
 		44B4A5302DFC144000ADD2A0 /* ImageEditorCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A52F2DFC143900ADD2A0 /* ImageEditorCanvasView.swift */; };
+		44B4A5452E000F3800ADD2A0 /* ImageEditorTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5442E000F3000ADD2A0 /* ImageEditorTransform.swift */; };
+		44B4A5472E0010AF00ADD2A0 /* CGAffineTranform+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5462E0010A800ADD2A0 /* CGAffineTranform+.swift */; };
+		44B4A5492E0011B200ADD2A0 /* ImageEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5482E0011AB00ADD2A0 /* ImageEditorModel.swift */; };
+		44B4A54B2E00145D00ADD2A0 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A54A2E00145A00ADD2A0 /* UIImage+.swift */; };
+		44B4A54D2E002BBC00ADD2A0 /* ImageEditorStrokeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A54C2E002BAF00ADD2A0 /* ImageEditorStrokeItem.swift */; };
+		44B4A54F2E002BE500ADD2A0 /* ImageEditorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A54E2E002BE100ADD2A0 /* ImageEditorItem.swift */; };
+		44B4A5512E002E7F00ADD2A0 /* ImageEditorContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5502E002E7900ADD2A0 /* ImageEditorContents.swift */; };
+		44B4A5532E002ECE00ADD2A0 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5522E002ECA00ADD2A0 /* OrderedDictionary.swift */; };
+		44B4A5562E0101EB00ADD2A0 /* SwiftAssertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B4A5552E0101D600ADD2A0 /* SwiftAssertUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +115,8 @@
 		4448ED742DFADB0300934528 /* WithoutDeprecationWarnings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithoutDeprecationWarnings.swift; sourceTree = "<group>"; };
 		4448ED762DFBC20D00934528 /* NSDirectionalEdgeInsets+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDirectionalEdgeInsets+.swift"; sourceTree = "<group>"; };
 		4448EDA42DFBCCDB00934528 /* DeprecationWorkaround.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeprecationWorkaround.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		445D0CFF2E0A3DF200A83B46 /* IEAssertionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEAssertionError.swift; sourceTree = "<group>"; };
+		445D0D012E0A3F3B00A83B46 /* DispatchQueue+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+.swift"; sourceTree = "<group>"; };
 		44B4A5042DFBCE8900ADD2A0 /* DeprecationWorkaround.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeprecationWorkaround.h; sourceTree = "<group>"; };
 		44B4A5052DFBCE8900ADD2A0 /* UIButton+DeprecationWorkaround.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+DeprecationWorkaround.h"; sourceTree = "<group>"; };
 		44B4A5062DFBCE8900ADD2A0 /* UIButton+DeprecationWorkaround.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+DeprecationWorkaround.m"; sourceTree = "<group>"; };
@@ -112,6 +125,15 @@
 		44B4A52B2DFC134800ADD2A0 /* ImageEditorPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		44B4A52D2DFC140700ADD2A0 /* ImageEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorView.swift; sourceTree = "<group>"; };
 		44B4A52F2DFC143900ADD2A0 /* ImageEditorCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorCanvasView.swift; sourceTree = "<group>"; };
+		44B4A5442E000F3000ADD2A0 /* ImageEditorTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorTransform.swift; sourceTree = "<group>"; };
+		44B4A5462E0010A800ADD2A0 /* CGAffineTranform+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGAffineTranform+.swift"; sourceTree = "<group>"; };
+		44B4A5482E0011AB00ADD2A0 /* ImageEditorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorModel.swift; sourceTree = "<group>"; };
+		44B4A54A2E00145A00ADD2A0 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		44B4A54C2E002BAF00ADD2A0 /* ImageEditorStrokeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorStrokeItem.swift; sourceTree = "<group>"; };
+		44B4A54E2E002BE100ADD2A0 /* ImageEditorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorItem.swift; sourceTree = "<group>"; };
+		44B4A5502E002E7900ADD2A0 /* ImageEditorContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorContents.swift; sourceTree = "<group>"; };
+		44B4A5522E002ECA00ADD2A0 /* OrderedDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
+		44B4A5552E0101D600ADD2A0 /* SwiftAssertUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAssertUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,19 +199,22 @@
 		4448ED3D2DF95C0D00934528 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				44B4A5272DFC10E500ADD2A0 /* UIFont+.swift */,
-				4448ED762DFBC20D00934528 /* NSDirectionalEdgeInsets+.swift */,
-				4448ED742DFADB0300934528 /* WithoutDeprecationWarnings.swift */,
-				4448ED6D2DFA78A700934528 /* UIStackView+.swift */,
-				4448ED6B2DFA772500934528 /* UIDevice+.swift */,
+				445D0D012E0A3F3B00A83B46 /* DispatchQueue+.swift */,
 				4448ED352DF95C0D00934528 /* AutoLayout+.swift */,
+				44B4A5462E0010A800ADD2A0 /* CGAffineTranform+.swift */,
 				4448ED362DF95C0D00934528 /* CGFloat+.swift */,
 				4448ED372DF95C0D00934528 /* CGPoint+.swift */,
 				4448ED382DF95C0D00934528 /* CGRect+.swift */,
 				4448ED392DF95C0D00934528 /* CGSize+.swift */,
+				4448ED762DFBC20D00934528 /* NSDirectionalEdgeInsets+.swift */,
 				4448ED3A2DF95C0D00934528 /* UIColor+.swift */,
+				4448ED6B2DFA772500934528 /* UIDevice+.swift */,
 				4448ED3B2DF95C0D00934528 /* UIEdgeInsets+.swift */,
+				44B4A5272DFC10E500ADD2A0 /* UIFont+.swift */,
+				44B4A54A2E00145A00ADD2A0 /* UIImage+.swift */,
+				4448ED6D2DFA78A700934528 /* UIStackView+.swift */,
 				4448ED3C2DF95C0D00934528 /* UIView+.swift */,
+				4448ED742DFADB0300934528 /* WithoutDeprecationWarnings.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -208,6 +233,8 @@
 		4448ED442DF95C0D00934528 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				445D0CFF2E0A3DF200A83B46 /* IEAssertionError.swift */,
+				44B4A5522E002ECA00ADD2A0 /* OrderedDictionary.swift */,
 				4448ED432DF95C0D00934528 /* Math.swift */,
 			);
 			path = Utils;
@@ -216,9 +243,14 @@
 		4448ED482DF95C0D00934528 /* ImageEditor */ = {
 			isa = PBXGroup;
 			children = (
+				44B4A5502E002E7900ADD2A0 /* ImageEditorContents.swift */,
 				44B4A52F2DFC143900ADD2A0 /* ImageEditorCanvasView.swift */,
+				44B4A54E2E002BE100ADD2A0 /* ImageEditorItem.swift */,
+				44B4A5482E0011AB00ADD2A0 /* ImageEditorModel.swift */,
 				44B4A52B2DFC134800ADD2A0 /* ImageEditorPanGestureRecognizer.swift */,
+				44B4A54C2E002BAF00ADD2A0 /* ImageEditorStrokeItem.swift */,
 				4448ED692DFA723800934528 /* ImageEditorToolbar.swift */,
+				44B4A5442E000F3000ADD2A0 /* ImageEditorTransform.swift */,
 				44B4A52D2DFC140700ADD2A0 /* ImageEditorView.swift */,
 				4448ED462DF95C0D00934528 /* ImageEditorViewController.swift */,
 				44B4A5292DFC122E00ADD2A0 /* ImageEditorViewController+Blur.swift */,
@@ -239,6 +271,7 @@
 		4448ED4A2DF95C0D00934528 /* ImageEditor */ = {
 			isa = PBXGroup;
 			children = (
+				44B4A5542E0101C600ADD2A0 /* Asserts */,
 				4448ED322DF95C0D00934528 /* Applications */,
 				4448ED342DF95C0D00934528 /* ColorPicker */,
 				4448ED3D2DF95C0D00934528 /* Extension */,
@@ -257,6 +290,14 @@
 				44B4A5062DFBCE8900ADD2A0 /* UIButton+DeprecationWorkaround.m */,
 			);
 			path = DeprecationWorkaround;
+			sourceTree = "<group>";
+		};
+		44B4A5542E0101C600ADD2A0 /* Asserts */ = {
+			isa = PBXGroup;
+			children = (
+				44B4A5552E0101D600ADD2A0 /* SwiftAssertUtils.swift */,
+			);
+			path = Asserts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,8 +425,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B4A5512E002E7F00ADD2A0 /* ImageEditorContents.swift in Sources */,
 				4448ED6A2DFA724000934528 /* ImageEditorToolbar.swift in Sources */,
 				44B4A52E2DFC140D00ADD2A0 /* ImageEditorView.swift in Sources */,
+				445D0D022E0A3F4000A83B46 /* DispatchQueue+.swift in Sources */,
 				4448ED4B2DF95C0D00934528 /* CircleView.swift in Sources */,
 				4448ED4C2DF95C0D00934528 /* CGRect+.swift in Sources */,
 				44B4A52C2DFC134900ADD2A0 /* ImageEditorPanGestureRecognizer.swift in Sources */,
@@ -395,13 +438,19 @@
 				4448ED4E2DF95C0D00934528 /* UIView+.swift in Sources */,
 				44B4A5302DFC144000ADD2A0 /* ImageEditorCanvasView.swift in Sources */,
 				4448ED4F2DF95C0D00934528 /* ColorPickerBar.swift in Sources */,
+				44B4A54D2E002BBC00ADD2A0 /* ImageEditorStrokeItem.swift in Sources */,
+				44B4A5562E0101EB00ADD2A0 /* SwiftAssertUtils.swift in Sources */,
+				445D0D002E0A3DFC00A83B46 /* IEAssertionError.swift in Sources */,
 				44B4A5282DFC10EA00ADD2A0 /* UIFont+.swift in Sources */,
+				44B4A5492E0011B200ADD2A0 /* ImageEditorModel.swift in Sources */,
 				4448ED502DF95C0D00934528 /* Math.swift in Sources */,
 				4448ED512DF95C0D00934528 /* AutoLayout+.swift in Sources */,
 				4448ED522DF95C0D00934528 /* PermissiveGestureRecognizer.swift in Sources */,
 				4448ED532DF95C0D00934528 /* SceneDelegate.swift in Sources */,
 				4448ED542DF95C0D00934528 /* PillView.swift in Sources */,
+				44B4A5452E000F3800ADD2A0 /* ImageEditorTransform.swift in Sources */,
 				4448ED552DF95C0D00934528 /* UIColor+.swift in Sources */,
+				44B4A5532E002ECE00ADD2A0 /* OrderedDictionary.swift in Sources */,
 				4448ED562DF95C0D00934528 /* ImageEditorViewController+Draw.swift in Sources */,
 				4448ED772DFBC20E00934528 /* NSDirectionalEdgeInsets+.swift in Sources */,
 				4448ED572DF95C0D00934528 /* CGFloat+.swift in Sources */,
@@ -409,8 +458,11 @@
 				4448ED592DF95C0D00934528 /* CGSize+.swift in Sources */,
 				4448ED5A2DF95C0D00934528 /* UIEdgeInsets+.swift in Sources */,
 				4448ED5B2DF95C0D00934528 /* DynamicLayoutView.swift in Sources */,
+				44B4A5472E0010AF00ADD2A0 /* CGAffineTranform+.swift in Sources */,
 				4448ED5C2DF95C0D00934528 /* ImageEditorViewController.swift in Sources */,
+				44B4A54F2E002BE500ADD2A0 /* ImageEditorItem.swift in Sources */,
 				4448ED6E2DFA78AC00934528 /* UIStackView+.swift in Sources */,
+				44B4A54B2E00145D00ADD2A0 /* UIImage+.swift in Sources */,
 				4448ED6C2DFA772800934528 /* UIDevice+.swift in Sources */,
 				4448ED5D2DF95C0D00934528 /* CGPoint+.swift in Sources */,
 			);

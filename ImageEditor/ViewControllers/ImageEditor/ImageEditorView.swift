@@ -10,10 +10,13 @@ import PureLayout
 
 final class ImageEditorView: UIView {
     
+    let model: ImageEditorModel
+
     let canvasView: ImageEditorCanvasView
     
-    init() {
-        canvasView = ImageEditorCanvasView()
+    init(model: ImageEditorModel) {
+        self.model = model
+        canvasView = ImageEditorCanvasView(model: model)
         super.init(frame: .zero)
     }
 
